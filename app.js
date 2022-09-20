@@ -16,6 +16,7 @@ const userRouter = require('./routers/userRouts')
 const reviewRouter = require('./routers/reviewRouts')
 const bookingRouter = require('./routers/bookingRoutes')
 const viewRouter = require('./routers/viewRoutes')
+const compression = require('compression')
 const app = express()
 
 
@@ -28,6 +29,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(helmet())
 
 
+
+
+
+app.use(compression())
 // console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'development') {
